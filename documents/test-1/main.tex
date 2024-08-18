@@ -1,0 +1,39 @@
+% !TEX program = lualatex_escaped
+\input{../shared/preamble.tex}
+
+\title{Innlevering kapittel 2}
+\date{17. August 2024}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\hr
+
+\section{Python kode test}
+\begin{codebox}{En kode som gjør noen greier og sånt}
+  \begin{pythoncode}
+    V = lambda x: 2000 - 2000 * ( 1 - x / 40 ) ** 2
+    x1 = 0
+    x2 = 30
+    dy = V(x2) - V(x1)
+    dx = x2 - x1
+    stigning = dy/dx
+    print(f"Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er {stigning:0.1f}")
+  \end{pythoncode}
+
+  \dashlabel{Resultat}
+
+  \begin{coderesult}
+    Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er 62.5
+  \end{coderesult}
+\end{codebox}
+
+\section{En overskrift}
+\lipsum[1-20]
+
+\section{En annen overskrift}
+\lipsum[21-40]
+
+\section{Enda en overskrift}
+\lipsum[41-50]
+\end{document}

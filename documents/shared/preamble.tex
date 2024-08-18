@@ -5,6 +5,8 @@
 \usepackage[parfill]{parskip} % Better line breaks
 \usepackage[norwegian]{babel} % make stuff be in norwegian
 
+\author{Olai Solsvik} % Set the author globally
+
 \usepackage{emptypage}
 \usepackage{subcaption}
 \usepackage{multicol}
@@ -103,7 +105,7 @@
 \newmintedfile{python}{} % \pythonfile{path/to/file}
 
 \newcommand\dashlabel[1]{
-    \vspace{3mm}\begin{tikzpicture}[overlay, remember picture]
+    \vspace{4mm}\begin{tikzpicture}[overlay, remember picture]
         \draw[dashed, color=darkgray] (0,0) -- (\textwidth,0);
         \node[
             fill=darkgray,
@@ -112,10 +114,21 @@
             inner sep=4pt,
             anchor=west,
         ] at (0,0) {\small#1};
-    \end{tikzpicture}\vspace{3mm}\par
+    \end{tikzpicture}\vspace{4mm}\par
 }
 \newtcolorbox{codebox}[1]{
-    title=#1
+    title=\textbf{#1},
+    toprule=1mm
+}
+
+% Tcolorboxes
+\newtcolorbox{taskbox}[1]{
+    title=\textbf{Oppgave #1},
+    colframe=green!60!black,
+    colback=green!5!white,
+    width=0.4\textwidth,
+    toprule=1mm,
+    after skip=0mm
 }
 
 % Title, headers and footers
@@ -162,8 +175,3 @@
     linkcolor=black,
     urlcolor=black
 }
-
-\usepackage{mdframed}
-\mdfsetup{skipabove=1em,skipbelow=0.5em}
-
-\author{Olai Solsvik} % Set the author globally

@@ -178,7 +178,7 @@ acs-**/*.bib
 **/*.stc[0-9]*
 
 # minted
-_minted**/*
+**/_minted*
 **/*.pyg
 
 # morewrites
@@ -272,7 +272,7 @@ TSWLatexianTemp**/*
 **/*.sav
 
 # Texpad
-.texpadtmp
+**/.texpadtmp
 
 # LyX
 **/*.lyx~
@@ -281,7 +281,7 @@ TSWLatexianTemp**/*
 **/*.backup
 
 # gummi
-.**/*.swp
+**/.*.swp
 
 # KBibTeX
 **/*~[0-9]*
@@ -290,7 +290,7 @@ TSWLatexianTemp**/*
 **/*.tps
 
 # auto folder when using emacs and auctex
-./auto/**/*
+**/auto/*
 **/*.el
 
 # expex forward references with \gathertags

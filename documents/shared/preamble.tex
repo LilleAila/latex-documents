@@ -85,6 +85,7 @@
 
 \usepackage{minted, tcolorbox}
 \tcbuselibrary{breakable} % breakable boxes
+\tcbuselibrary{skins}
 \tcbuselibrary{minted} % syntax highlighting
 \setminted{tabsize=2, fontsize=\footnotesize, breaklines, autogobble} % Global settings for all environments
 
@@ -109,7 +110,11 @@
 \newtcolorbox{codebox}[1]{
     title=#1,
     fonttitle=\bfseries\sffamily,
-    toprule=1mm
+    toprule=1mm,
+    enhanced jigsaw,
+    breakable,
+    toprule at break=0mm,
+    bottomrule at break=0mm
 }
 
 % Tcolorboxes
@@ -119,7 +124,11 @@
     colback=green!5!white,
     fonttitle=\bfseries\sffamily,
     toprule=1mm,
-    after skip=0mm
+    after skip=0mm,
+    enhanced jigsaw,
+    breakable,
+    toprule at break=0mm,
+    bottomrule at break=0mm
 }
 
 % Links in \tableofcontents

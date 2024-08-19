@@ -32,12 +32,12 @@
 \fancyhead[RO,LE]{\MyTitle}
 \fancyhead[LO,RE]{\MyAuthor}
 \fancyfoot{} % Clear the footer
-\fancyfoot[LO,RE]{\thepage/\pageref{LastPage}}
+\fancyfoot[LO,RE]{Side \thepage/\pageref{LastPage}}
 % The first page
 \setlength{\droptitle}{-5em}
 \fancypagestyle{plain}{%
   % Empty header with no border
   \renewcommand{\headrulewidth}{0pt}
   \fancyhead{}
-  \fancyfoot[L]{\thepage/\pageref{LastPage}}
+  \fancyfoot[L]{Side \thepage/\pageref{LastPage}}
 }

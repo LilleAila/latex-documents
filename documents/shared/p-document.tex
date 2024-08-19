@@ -2,3 +2,42 @@
 \documentclass[10pt, twoside]{article}
 \usepackage[a4paper, margin=2cm]{geometry}
 \input{\shared/preamble.tex}
+
+% Lists
+\usepackage{enumitem} % Custom lists
+\newcommand\mitem[1][]{ % Add a custom list item that removes vertical space with math items
+	\ifx\relax#1\relax  \item \else \item[#1] \fi
+	\abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+% TODO-Notes
+\usepackage{todonotes}
+
+% Title font sizes
+\usepackage{titlesec} % Changing title font size
+\titleformat*{\section}{\bfseries\fontsize{14}{18}\selectfont}
+\titleformat*{\subsection}{\bfseries\fontsize{12}{16}\selectfont}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+% Title, headers and footers
+% https://www.overleaf.com/learn/latex/Headers_and_footers
+\usepackage{fancyhdr, lastpage, authoraftertitle, titling}
+\pagestyle{fancy}
+\fancyhead{} % Clear the header
+\fancyhead[RO,LE]{\MyTitle}
+\fancyhead[LO,RE]{\MyAuthor}
+\fancyfoot{} % Clear the footer
+\fancyfoot[LO,RE]{\thepage/\pageref{LastPage}}
+% The first page
+\setlength{\droptitle}{-5em}
+\fancypagestyle{plain}{%
+  % Empty header with no border
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead{}
+  \fancyfoot[L]{\thepage/\pageref{LastPage}}
+}

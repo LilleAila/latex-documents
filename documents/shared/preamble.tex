@@ -83,13 +83,9 @@
 
 \newcommand\hide[1]{} % hide stuff
 
-\usepackage{todonotes}
-\usepackage{tcolorbox}
-\tcbuselibrary{breakable} % breakable boxes
-
-% Syntax highlighting and code blocks
 \usepackage{minted, tcolorbox}
-\tcbuselibrary{minted}
+\tcbuselibrary{breakable} % breakable boxes
+\tcbuselibrary{minted} % syntax highlighting
 \setminted{tabsize=2, fontsize=\footnotesize, breaklines, autogobble} % Global settings for all environments
 
 % Commands
@@ -126,41 +122,6 @@
     toprule=1mm,
     after skip=0mm
 }
-
-% Title, headers and footers
-% https://www.overleaf.com/learn/latex/Headers_and_footers
-\usepackage{fancyhdr, lastpage, authoraftertitle, titling}
-\pagestyle{fancy}
-\fancyhead{} % Clear the header
-\fancyhead[RO,LE]{\MyTitle}
-\fancyhead[LO,RE]{\MyAuthor}
-\fancyfoot{} % Clear the footer
-\fancyfoot[LO,RE]{\thepage/\pageref{LastPage}}
-% The first page
-\setlength{\droptitle}{-5em}
-\fancypagestyle{plain}{%
-  % Empty header with no border
-  \renewcommand{\headrulewidth}{0pt}
-  \fancyhead{}
-  \fancyfoot[L]{\thepage/\pageref{LastPage}}
-}
-
-% Title font sizes
-\usepackage{titlesec} % Changing title font size
-\titleformat*{\section}{\bfseries\fontsize{14}{18}\selectfont}
-\titleformat*{\subsection}{\bfseries\fontsize{12}{16}\selectfont}
-\setcounter{secnumdepth}{4}
-\titleformat{\paragraph}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
-
-% Lists
-\usepackage{enumitem} % Custom lists
-\newcommand\mitem[1][]{ % Add a custom list item that removes vertical space with math items
-	\ifx\relax#1\relax  \item \else \item[#1] \fi
-	\abovedisplayskip=0pt\abovedisplayshortskip=0pt~\vspace*{-\baselineskip}}
-\renewcommand{\labelenumi}{\alph{enumi})}
 
 % Links in \tableofcontents
 \usepackage{hyperref}

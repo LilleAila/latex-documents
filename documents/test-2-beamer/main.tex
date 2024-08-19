@@ -1,0 +1,29 @@
+% !TEX program = lualatex_escaped
+% !TEX root = ./main.tex
+\newcommand*{\shared}{../shared}
+\input{\shared/p-beamer.tex}
+\usetheme{Hannover}
+
+\title{Beamer}
+\subtitle{Dette er en test-presentasjon i beamer}
+\author{Olai Solsvik}
+\institute{Amalie Skram VGS}
+\date{19. August 2024}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Innhold}
+  \tableofcontents
+\end{frame}
+
+\section{Del 1}
+\subsection{Subsection a}
+\begin{frame}
+  \frametitle{Another frame}
+  \lipsum[1]
+\end{frame}
+\end{document}

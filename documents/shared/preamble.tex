@@ -8,6 +8,7 @@
 \usepackage{graphicx} % images
 \usepackage{xparse} % More advanced document commands
 \usepackage{url} % Typeset urls better
+\usepackage{luacode}
 
 % Colors
 \usepackage{color}
@@ -58,6 +59,14 @@
 \let\implies\Rightarrow
 \let\impliedby\Leftarrow
 \let\iff\Leftrightarrow
+
+\newcommand{\ans}[1]{%
+  \directlua{
+    local input = "#1"
+    local lhs, rhs = input:match("^(.-)&(.*)$")
+    tex.print("\\underline{\\underline{" .. lhs .. "}\\vphantom{" .. rhs .. "}}&\\underline{\\underline{\\vphantom{" .. lhs .. "}" .. rhs .. "}}")
+  }%
+}
 
 % Tables
 \usepackage{booktabs} % Better looking tables

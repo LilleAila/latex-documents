@@ -64,7 +64,11 @@
   \directlua{
     local input = "#1"
     local lhs, rhs = input:match("^(.-)&(.*)$")
-    tex.print("\\underline{\\underline{" .. lhs .. "}\\vphantom{" .. rhs .. "}}&\\underline{\\underline{\\vphantom{" .. lhs .. "}" .. rhs .. "}}")
+    if lhs and rhs then
+        tex.print("\\underline{\\underline{" .. lhs .. "}\\vphantom{" .. rhs .. "}}&\\underline{\\underline{\\vphantom{" .. lhs .. "}" .. rhs .. "}}")
+    else
+        tex.print("\\underline{\\underline{" .. input .. "}}")
+    end
   }%
 }
 

@@ -23,8 +23,10 @@
             nixfmt-rfc-style
             # TODO: only specify used packages, as described in https://nixos.wiki/wiki/TexLive
             texlive.combined.scheme-full
+            texlab
             pandoc
             zathura
+            sioyek
             (python311.withPackages (ps: with ps; [ pygments ]))
             # (rustPlatform.buildRustPackage {
             #   pname = "autotex";

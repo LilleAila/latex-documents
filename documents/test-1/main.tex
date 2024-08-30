@@ -1,5 +1,3 @@
-% !TEX program = lualatex_escaped
-% !TEX root = ./main.tex
 \newcommand*{\shared}{../shared}
 \input{\shared/p-document.tex}
 
@@ -14,22 +12,22 @@
 
 \section{Python kode test}
 \begin{codebox}{En kode som gjør noen greier og sånt}
-  \begin{pythoncode}
-    V = lambda x: 2000 - 2000 * ( 1 - x / 40 ) ** 2
-    x1 = 0
-    x2 = 30
-    dy = V(x2) - V(x1)
-    dx = x2 - x1
-    stigning = dy/dx
-    print(f"Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er {stigning:0.1f}")
-  \end{pythoncode}
+	\begin{pythoncode}
+		V = lambda x: 2000 - 2000 * ( 1 - x / 40 ) ** 2
+		x1 = 0
+		x2 = 30
+		dy = V(x2) - V(x1)
+		dx = x2 - x1
+		stigning = dy/dx
+		print(f"Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er {stigning:0.1f}")
+	\end{pythoncode}
 
-  \dashlabel{Resultat}
-  % \tcblower
+	\dashlabel{Resultat}
+	% \tcblower
 
-  \begin{coderesult}
-    Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er 62.5
-  \end{coderesult}
+	\begin{coderesult}
+		Stigningstallet til den rette linjen som går mellom punktene (0, V(0)) og (30, V(30)) i funksjonen V, er 62.5
+	\end{coderesult}
 \end{codebox}
 
 \section{commands}
@@ -38,40 +36,40 @@ abc\bold{def}\italic{ghi}\bold{\italic{jkl}}
 
 \section{Oppgaver}
 \begin{taskbox}{3.1.5}
-  Løs likningen
-  \begin{flalign*}
-    & 2x + 2 = 6 &
-  \end{flalign*}
-  \tcblower\vspace{-\baselineskip}
-  \begin{flalign*}
-    2x &= 4 & \\
-    \ans{x&=2}
-  \end{flalign*}
+	Løs likningen
+	\begin{flalign*}
+		 & 2x + 2 = 6 &
+	\end{flalign*}
+	\tcblower\vspace{-\baselineskip}
+	\begin{flalign*}
+		2x     & = 4 & \\
+		\ans{x & =2}
+	\end{flalign*}
 \end{taskbox}
 
 \begin{taskbox}{3.1.6}
-  Løs likningen
-  \begin{flalign*}
-    & 2x + 2 = 6 &
-  \end{flalign*}
-  \tcblower\vspace{-\baselineskip}
-  \begin{flalign*}
-    2x &= 4 & \\
-    \ans{x&=2}
-  \end{flalign*}
-  \lipsum[1]
+	Løs likningen
+	\begin{flalign*}
+		 & 2x + 2 = 6 &
+	\end{flalign*}
+	\tcblower\vspace{-\baselineskip}
+	\begin{flalign*}
+		2x     & = 4 & \\
+		\ans{x & =2}
+	\end{flalign*}
+	\lipsum[1]
 \end{taskbox}
 
-\begin{taskbox}{3.1.8}
-  Løs likningen
-  \begin{flalign*}
-    & 2x + 2 = 6 &
-  \end{flalign*}
-  \tcblower\vspace{-\baselineskip}
-  \begin{flalign*}
-    2x &= 4 & \\
-    \ans{x&=2}
-  \end{flalign*}
+\begin{taskbox}{3.1.7}
+	Løs likningen
+	\begin{flalign*}
+		 & 2x + 2 = 6 &
+	\end{flalign*}
+	\tcblower\vspace{-\baselineskip}
+	\begin{flalign*}
+		2x     & = 4 & \\
+		\ans{x & =2}
+	\end{flalign*}
 \end{taskbox}
 
 \section{En overskrift}

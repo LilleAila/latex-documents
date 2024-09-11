@@ -17,25 +17,25 @@
 % Fonts
 \usepackage{fontspec}
 \setmainfont{IBMPlexSerif}[
-    Extension = .otf,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-Italic,
-    BoldItalicFont = *-BoldItalic,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
 ]
 \setsansfont{IBMPlexSans}[
-    Extension = .otf,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-Italic,
-    BoldItalicFont = *-BoldItalic,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
 ]
 \setmonofont{IBMPlexMono}[
-    Extension = .otf,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-Italic,
-    BoldItalicFont = *-BoldItalic,
+	Extension = .otf,
+	UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
 ]
 
 % Math stuff
@@ -61,21 +61,22 @@
 \let\iff\Leftrightarrow
 
 \newcommand{\ans}[1]{%
-  \directlua{
-    local input = "#1"
-    local lhs, rhs = input:match("^(.-)&(.*)$")
-    if lhs and rhs then
-        tex.print("\\underline{\\underline{" .. lhs .. "}\\vphantom{" .. rhs .. "}}&\\underline{\\underline{\\vphantom{" .. lhs .. "}" .. rhs .. "}}")
-    else
-        tex.print("\\underline{\\underline{" .. input .. "}}")
-    end
-  }%
+	\directlua{
+		local input = [[#1]]
+		local lhs, rhs = input:match("^(.-)&(.*)$")
+		if lhs and rhs then
+		tex.print("\\underline{\\underline{" .. lhs .. "}\\vphantom{" .. rhs .. "}}&\\underline{\\underline{\\vphantom{" .. lhs .. "}" .. rhs .. "}}")
+		else
+		tex.print("\\underline{\\underline{" .. input .. "}}")
+		end
+	}%
 }
 
 % Tables
 \usepackage{booktabs} % Better looking tables
 \usepackage{colortbl}
-\newcommand{\gray}{\rowcolor[gray]{.9}} % Use at the start of row to make gray
+% \usepackage{cellspace}
+\renewcommand{\arraystretch}{1.5}
 
 % tikz and pgfplots
 \usepackage{siunitx}
@@ -90,8 +91,8 @@
 
 % horizontal rule
 \newcommand\hr{
-    \vspace{3mm}
-    \noindent\hrule
+	\vspace{3mm}
+	\noindent\hrule
 }
 
 \newcommand\hide[1]{} % hide stuff
@@ -109,49 +110,63 @@
 \newmintedfile{python}{} % \pythonfile{path/to/file}
 
 \newcommand\dashlabel[1]{
-    \vspace{4mm}\begin{tikzpicture}[overlay, remember picture]
-        \draw[dashed, color=darkgray] (0,0) -- (\textwidth,0);
-        \node[
-            fill=darkgray,
-            text=white,
-            rounded corners,
-            inner sep=4pt,
-            anchor=west,
-        ] at (0,0) {\small#1};
-    \end{tikzpicture}\vspace{4mm}\par
+	\vspace{4mm}\begin{tikzpicture}[overlay, remember picture]
+		\draw[dashed, color=darkgray] (0,0) -- (\textwidth,0);
+		\node[
+			fill=darkgray,
+			text=white,
+			rounded corners,
+			inner sep=4pt,
+			anchor=west,
+		] at (0,0) {\small#1};
+	\end{tikzpicture}\vspace{4mm}\par
 }
 \newtcolorbox{codebox}[1]{
-    title=#1,
-    fonttitle=\bfseries\sffamily,
-    toprule=1mm,
-    enhanced jigsaw,
-    breakable,
-    toprule at break=0mm,
-    bottomrule at break=0mm
+	title=#1,
+	fonttitle=\bfseries\sffamily,
+	toprule=1mm,
+	enhanced jigsaw,
+	breakable,
+	toprule at break=0mm,
+	bottomrule at break=0mm
 }
 
 % Tcolorboxes
 \newtcolorbox{taskbox}[1]{
-    title=Oppgave #1,
-    colframe=green!60!black,
-    colback=green!5!white,
-    fonttitle=\bfseries\sffamily,
-    toprule=1mm,
-    after skip=0mm,
-    enhanced jigsaw,
-    breakable,
-    toprule at break=0mm,
-    bottomrule at break=0mm
+	title=#1,
+	colframe=green!60!black,
+	colback=green!5!white,
+	fonttitle=\bfseries\sffamily,
+	toprule=1mm,
+	after skip=0mm,
+	enhanced jigsaw,
+	breakable,
+	toprule at break=0mm,
+	bottomrule at break=0mm
 }
+
+\newtcolorbox{examplebox}[1]{
+	title=#1,
+	colframe=blue!60!black,
+	colback=blue!5!white,
+	fonttitle=\bfseries\sffamily,
+	toprule=1mm,
+	after skip=0mm,
+	enhanced jigsaw,
+	breakable,
+	toprule at break=0mm,
+	bottomrule at break=0mm
+}
+
 
 % Links in \tableofcontents
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=black
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
 }
 
 % Random useful commands
